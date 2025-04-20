@@ -1,40 +1,33 @@
 import { ThemeProvider } from "@/components/theme-provider"
 import { ModeToggle } from "@/components/mode-toggle"
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
+import { AppAccordion } from "@/components/util/AppAccordion"
+import { AppDialog } from "@/components/util/AppDialog"
+import { SectionCard } from "./components/util/SectionCard"
 
 function App() {
   return (
-    <section className="w-6/12 m-auto">
+    <section className="flex flex-col  w-6/12 m-auto">
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-        <ModeToggle />
+        <div className="flex flex-row-reverse" >
+          <ModeToggle />
+        </div>
 
-        <section className="w-4/12">
-          <Accordion type="single" collapsible>
-            <AccordionItem value="item-1">
-              <AccordionTrigger>Is it accessible?</AccordionTrigger>
-              <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>Is it accessible?</AccordionTrigger>
-              <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger>Is it accessible?</AccordionTrigger>
-              <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </section>
+        <SectionCard
+          title="My Cool Section"
+          description="This is how a section looks">
+          <AppAccordion />
+        </SectionCard>
+
+        <SectionCard
+          title="Another Great Section">
+          <p>Click the button below to open the dialog box</p>
+          <AppDialog
+            onClick={() => { debugger }}
+            buttonText="Click Me"
+            dialogTitle="This is a great dialog box">
+            <AppAccordion />
+          </AppDialog>
+        </SectionCard>
       </ThemeProvider>
     </section>
   )
