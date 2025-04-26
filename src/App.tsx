@@ -1,8 +1,7 @@
 import { ThemeProvider } from "@/components/theme-provider"
 import { ModeToggle } from "@/components/mode-toggle"
-import { AppAccordion } from "@/components/util/AppAccordion"
-import { AppDialog } from "@/components/util/AppDialog"
-import { SectionCard } from "./components/util/SectionCard"
+
+import { CardWithVariants } from "./components/CardWithVariants"
 
 function App() {
   return (
@@ -12,22 +11,21 @@ function App() {
           <ModeToggle />
         </div>
 
-        <SectionCard
-          title="My Cool Section"
-          description="This is how a section looks">
-          <AppAccordion />
-        </SectionCard>
-
-        <SectionCard
-          title="Another Great Section">
-          <p>Click the button below to open the dialog box</p>
-          <AppDialog
-            onClick={() => { debugger }}
-            buttonText="Click Me"
-            dialogTitle="This is a great dialog box">
-            <AppAccordion />
-          </AppDialog>
-        </SectionCard>
+        <CardWithVariants size="full">
+          Hi
+        </CardWithVariants>
+        <CardWithVariants size="wide" variant="red">
+          Hi
+        </CardWithVariants>
+        <CardWithVariants size="mid" variant="blue">
+          Hi
+        </CardWithVariants>
+        <CardWithVariants size="small" variant="green">
+          Hi
+        </CardWithVariants>
+        <CardWithVariants size="tiny" variant="orange">
+          Hi
+        </CardWithVariants>
       </ThemeProvider>
     </section>
   )
