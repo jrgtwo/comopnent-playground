@@ -1,6 +1,7 @@
 import { ThemeProvider } from "@/components/theme-provider"
 import { ModeToggle } from "@/components/mode-toggle"
 
+import { ChartSample } from "./components/chartSample"
 import { CardWithVariants } from "./components/CardWithVariants"
 
 function App() {
@@ -10,6 +11,9 @@ function App() {
         <div className="flex flex-row-reverse" >
           <ModeToggle />
         </div>
+
+        <ChartSample />
+
 
         <CardWithVariants size="full">
           Hi
