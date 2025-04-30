@@ -5,6 +5,8 @@ import { ChartSample } from "./components/chartSample"
 import { CardWithVariants } from "./components/CardWithVariants"
 import { SectionCard } from "./components/util/SectionCard"
 import { Button } from "./components/ui/button"
+import { Separator } from "./components/ui/separator"
+import { Input } from "./components/ui/input"
 
 function App() {
   return (
@@ -20,8 +22,12 @@ function App() {
           footerText="Some Footer text">
           <h2>Some Cool Stuff will be here</h2>
           <Button>This is a button</Button>
-          <br />
+          <br /><br />
           <Button size="sm">This is a small button</Button>
+          <br /><br />
+          <Separator />
+          <br />
+          <Input placeholder="Some Cool PlaceholderText" />
         </SectionCard>
 
         <ChartSample />
