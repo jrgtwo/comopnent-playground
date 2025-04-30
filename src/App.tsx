@@ -3,6 +3,8 @@ import { ModeToggle } from "@/components/mode-toggle"
 
 import { ChartSample } from "./components/chartSample"
 import { CardWithVariants } from "./components/CardWithVariants"
+import { SectionCard } from "./components/util/SectionCard"
+import { Button } from "./components/ui/button"
 
 function App() {
   return (
@@ -11,6 +13,16 @@ function App() {
         <div className="flex flex-row-reverse" >
           <ModeToggle />
         </div>
+
+        <SectionCard
+          title="Some Card Title"
+          description="Some Card Description"
+          footerText="Some Footer text">
+          <h2>Some Cool Stuff will be here</h2>
+          <Button>This is a button</Button>
+          <br />
+          <Button size="sm">This is a small button</Button>
+        </SectionCard>
 
         <ChartSample />
 
